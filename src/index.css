@@ -1,0 +1,11 @@
+.page{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.row{
+    width: 480px;
+    position: relative;
+    margin: 25px;
+}
