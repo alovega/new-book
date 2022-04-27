@@ -5,38 +5,41 @@ import Popup from "./Popup";
 
 
 const PageToken = (props) => {
+    // setup state for toggling
     const [isOpen, setIsOpen] = useState(false)
+    // set up state for pop value
+    const [selectedData, setSelectedData] = useState({});
 
-    const togglePopup = () => {
+    const togglePopup = (e) => {
         setIsOpen(!isOpen);
+        setSelectedData(e.target.getAttribute("value"))
       }
     const  { book }  = props
-    console.log(book);
     const contents = book.pages.slice().map((data) => {
         let {content, pageIndex, tokens} = data
-        pageIndex = pageIndex ? String(pageIndex): "0"
+        pageIndex = String(pageIndex + 1)
 
         return content.length ? <div key={pageIndex} className="row">
-            
             {
                 tokens.map((token) => {
                     let [a, b] = token.position;
                     return( 
-                    <span key={[a, b]} onClick={togglePopup}>
+                    <span key={[a, b]} value={token.value} onClick={togglePopup}>
                         {content.slice(a, b + 1)}
                         <>
                             {isOpen && <Popup 
-                                            value={token.value}
+                                            value={selectedData}
                                         handleClose={togglePopup}
                                         />
                             }
                         </>
                     </span>)
                 })
+
             }
-        </div>: <div className="row">""</div>
+        <footer>{pageIndex}</footer>
+        </div>: <div className="row">"" <footer>{pageIndex}</footer></div>
     })
-    console.log(contents)
     return(
         <div className="page">
             {contents}
