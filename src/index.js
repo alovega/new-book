@@ -1,25 +1,29 @@
 import React from "react";
 import ReactDOM  from "react-dom";
 import './index.css';
+import App from "./components/App";
 
-class Book extends React.Component{
-    render(){
-        return(
-            <div className="page">  
-                <div className="row">
-                    With CSS, you have full control over the margins. There are properties for 
-                    setting the margin for each side of an element (top, right, bottom, and left).
-                </div>
-                <div className="row">
-                    With CSS, you have full control over the margins. There are properties for 
-                    setting the margin for each side of an element (top, right, bottom, and left).
-                </div> 
-            </div>
-        )
-    }
-}
+import {
+    ApolloProvider,
+    ApolloClient,
+    createHttpLink,
+    InMemoryCache
+  } from '@apollo/client';
+
+// GraphQL API endpoint to query
+const httpLink = createHttpLink({
+    uri: 'https://fullstack-engineer-test-n4ouilzfna-uc.a.run.app/graphql.'
+});
+
+// client to handle GraphQL requests
+const client = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache()
+})
 
 ReactDOM.render(
-    <Book />,
+    <ApolloProvider client={client}>
+        <App />
+    </ApolloProvider>,
     document.getElementById('root')
 );
