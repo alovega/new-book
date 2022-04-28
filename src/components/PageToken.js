@@ -24,7 +24,7 @@ const PageToken = (props) => {
                 tokens.map((token) => {
                     let [a, b] = token.position;
                     return( 
-                    <span key={[a, b]} value={token.value} onClick={togglePopup}>
+                    <span  value={token.value} onClick={togglePopup}>
                         {content.slice(a, b + 1)}
                         <>
                             {isOpen && <Popup 

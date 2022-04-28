@@ -1,11 +1,35 @@
-import React, {Component} from "react";
+import React from "react";
 import Page from "./Page"
+import { gql, useQuery } from "@apollo/client";
 
-
-class App extends Component {
-    render() {
-      return <Page />;
+const BOOK_QUERY = gql`
+  query BookQuery{
+    book{
+      pages{
+        content
+        pageIndex
+        tokens{
+          position
+          value
+        }
+      }
+      title
     }
+  }
+`;
+
+
+const App = () => {
+    const { data }  = useQuery(BOOK_QUERY);
+      return (
+      <div>
+        {data && (
+          <>
+          <Page data={data} />
+          </>
+        )}
+      </div>
+      );
   }
 
 

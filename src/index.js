@@ -12,7 +12,7 @@ import {
 
 // GraphQL API endpoint to query
 const httpLink = createHttpLink({
-    uri: 'https://fullstack-engineer-test-n4ouilzfna-uc.a.run.app/graphql.'
+    uri: 'https://fullstack-engineer-test-n4ouilzfna-uc.a.run.app/graphql'
 });
 
 // client to handle GraphQL requests
