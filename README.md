@@ -14,7 +14,7 @@ git clone git@github.com:alovega/new-book.git
 
 ### 3. Run the app
 
-Now that the server is running, you can start the React app as well. The commands need to be run in a new terminal tab/window inside the root directory `new-book` 
+Now you can start the React app as well. The commands need to be run in a new terminal tab/window inside the root directory `new-book` 
 
 ```sh
 npm install
