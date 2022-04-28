@@ -38,7 +38,7 @@ const PageToken = (props) => {
 
             }
         <footer>{pageIndex}</footer>
-        </div>: <div className="row">"" <footer>{pageIndex}</footer></div>
+        </div>: <div className="row"><footer>{pageIndex}</footer></div>
     })
     return(
         <div className="page">

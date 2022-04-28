@@ -15,6 +15,7 @@ body{
     width: 480px;
     position: relative;
     margin: 25px;
+    height: 250px;
 }
 
 .header{
@@ -87,4 +88,10 @@ body{
     border: 2px solid #555555;
     padding: 8px 25px;
     border-radius: 4px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  span{
+      cursor: pointer;
   }
