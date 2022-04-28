@@ -1,0 +1,88 @@
+.page{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+body{
+    letter-spacing: 2px;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.row{
+    width: 480px;
+    position: relative;
+    margin: 25px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Popup style */
+.popup-box {
+    position: fixed;
+    background: #00000050;
+    opacity: 0.1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  
+  .box {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 70vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+  
+  .close-icon {
+    content: 'x';
+    cursor: pointer;
+    position: fixed;
+    right: calc(15% - 30px);
+    top: calc(100vh - 85vh - 33px);
+    background: #ededed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 20px;
+  }
+
+  footer{
+    justify-content: end;
+    display: flex;
+  }
+
+  .next{
+      margin: auto;
+  }
+
+  .button:hover {
+    transition-duration: 0.4s;
+    background-color: #555555;
+    color: white;
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+    font-size: inherit;
+    border: 2px solid #555555;
+    padding: 8px 25px;
+    border-radius: 4px;
+  }
