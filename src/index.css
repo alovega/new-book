@@ -61,3 +61,21 @@
     justify-content: end;
     display: flex;
   }
+
+  .next{
+      margin: auto;
+  }
+
+  .button:hover {
+    transition-duration: 0.4s;
+    background-color: #555555;
+    color: white;
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    padding: 8px 25px;
+    border-radius: 4px;
+  }
