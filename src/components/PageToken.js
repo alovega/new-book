@@ -15,7 +15,7 @@ const PageToken = (props) => {
         setSelectedData(e.target.getAttribute("value"))
       }
     const  { book }  = props
-    const contents = book.pages.slice().map((data) => {
+    const contents = book.data.slice().map((data) => {
         let {content, pageIndex, tokens} = data
         pageIndex = String(pageIndex + 1)
 
