@@ -1,3 +1,4 @@
+/* Body root styling */
 .page{
     display: flex;
     flex-direction: row;
@@ -72,6 +73,7 @@ body{
       margin: auto;
   }
 
+  /* button styling  */
   .button:hover {
     transition-duration: 0.4s;
     background-color: #555555;
