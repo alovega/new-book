@@ -28,7 +28,7 @@ body{
 .popup-box {
     position: fixed;
     background: #00000050;
-    opacity: 0.1;
+    opacity: 0.3;
     width: 100%;
     height: 100vh;
     top: 0;
@@ -65,9 +65,10 @@ body{
     font-size: 20px;
   }
 
-  footer{
+  .footer{
     justify-content: end;
     display: flex;
+    position: inherit;
   }
 
   .next{
@@ -88,7 +89,7 @@ body{
     border: 2px solid #555555;
     padding: 8px 25px;
     border-radius: 4px;
-    position: relative;
+    position: inherit;
     bottom: 2px;
   }
 

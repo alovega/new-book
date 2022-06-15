@@ -10,6 +10,11 @@ const PageToken = (props) => {
     // set up state for pop value
     const [selectedData, setSelectedData] = useState({});
 
+    const replaceJSX = (str, find, replace) =>{
+        let parts = str.replace(find, replace);
+        return parts;
+    }
+
     const togglePopup = (e) => {
         setIsOpen(!isOpen);
         setSelectedData(e.target.getAttribute("value"))
@@ -21,11 +26,29 @@ const PageToken = (props) => {
 
         return content.length ? <div key={pageIndex} className="row">
             {
-                tokens.map((token) => {
-                    let [a, b] = token.position;
+                tokens.map((token, index, array) => {
+                    let prev_index = index > 0 ? index-1 : 0;
+                    let [c,d] = tokens[prev_index].position;
+                    let [a,b] = token.position;
+                    if (a !== c){
+                        a = d+1
+                    }
+                    if (index + 1 === array.length && index +1 !== content.length){
+                        b = b+1
+                    }
+                    let value = <span  value={token.value} onClick={togglePopup}>
+                        {content.slice(a, b+1 )}
+                        <>
+                            {isOpen && <Popup 
+                                            value={selectedData}
+                                        handleClose={togglePopup}
+                                        />
+                            }
+                        </>
+                    </span>
                     return( 
                     <span  value={token.value} onClick={togglePopup}>
-                        {content.slice(a, b + 1)}
+                        {content.slice(a, b+1 )}
                         <>
                             {isOpen && <Popup 
                                             value={selectedData}
@@ -37,8 +60,8 @@ const PageToken = (props) => {
                 })
 
             }
-        <footer>{pageIndex}</footer>
-        </div>: <div className="row"><footer>{pageIndex}</footer></div>
+        <div className="footer">{pageIndex}</div>
+        </div>: <div className="row"><div className="footer">{pageIndex}</div></div>
     })
     return(
         <div className="page">
